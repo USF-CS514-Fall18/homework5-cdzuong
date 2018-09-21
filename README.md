@@ -1,18 +1,18 @@
 # Homework 5
 Due: September 28, 11:59pm
 
-Use the following link to to create your private github repository for this assignment: [a link]()
+Use the following link to to create your private github repository for this assignment: [a link](https://classroom.github.com/a/-yThwjrI)
 The repository will be seeded with the skeleton code and testing code. 
 
 
 In this assingment, you will practice working with linked lists. Fill in code in the following methods of class LinkedList in package linkedList:
--toString, 
--getElement, 
--sumElementsAtEvenIndices(),
--removeNodes, 
--reverse, 
--removeLastOccurrence
--addNumber
+- toString, 
+- getElement, 
+- sumElementsAtEvenIndices(),
+- removeNodes, 
+- reverse, 
+- removeLastOccurrence
+- addNumber
 
 The comment above each method describes what the method is supposed to do. Please note that you are not allowed to use Java's 
 built-in LinkedList class from java.util, and arrays, ArrayLists, maps and sets too. 
