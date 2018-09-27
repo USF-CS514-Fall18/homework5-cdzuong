@@ -164,4 +164,43 @@ public class LinkedListTester {
         assertTrue("addNumber does not add a value correctly", studentRes.equals(expectedRes));
     }
 
+    /** Test removeNodes */
+    @Test
+    public void testRemoveNodes() {
+        list.removeNodes(1, 4);
+        String studentRes =  list.toString().trim();
+        String expectedRes = "17 25";
+        assertTrue("The result of removeNodes is not what is expected ", studentRes.equals(expectedRes));
+    }
+
+    /** Test removeNodes when we remove all the nodes from
+     * index 0 to size-1 */
+    @Test
+    public void testRemoveNodesRemoveAllNodes() {
+        list.removeNodes(0, 5);
+        String studentRes =  list.toString().trim();
+        String expectedRes = "";
+        assertTrue("The result of removeNodes is not what is expected ", studentRes.equals(expectedRes));
+    }
+
+    /** Tests removeNodes when startIndex is less than 0 */
+    @Test
+    public void testRemoveNodesWrongStartIndex() {
+        list.removeNodes(-2, 2);
+        String studentRes =  list.toString().trim();
+        //System.out.println("res = "  + studentRes);
+        String expectedRes = "45 1 25";
+        assertTrue("The result of removeNodes is not what is expected ", studentRes.equals(expectedRes));
+    }
+
+    /** Tests removeNodes when endIndex is greater than size-1 */
+    @Test
+    public void testRemoveNodesWrongEndIndex() {
+        list.removeNodes(3, 10);
+        String studentRes =  list.toString().trim();
+        //System.out.println("res = "  + studentRes);
+        String expectedRes = "17 30 2";
+        assertTrue("The result of removeNodes is not what is expected ", studentRes.equals(expectedRes));
+    }
+
 }
