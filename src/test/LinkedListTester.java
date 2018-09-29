@@ -181,7 +181,9 @@ public class LinkedListTester {
     public void testRemoveNodes() {
         list.removeNodes(1, 4);
         String studentRes =  list.toString().trim();
+        System.out.println(studentRes);
         String expectedRes = "17 25";
+        System.out.println(expectedRes);
         assertTrue("The result of removeNodes is not what is expected ", studentRes.equals(expectedRes));
     }
 

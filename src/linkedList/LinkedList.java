@@ -153,9 +153,9 @@ public class LinkedList {
     public int sumElementsAtEvenIndices() {
         // FILL IN CODE
         Node current = head;
-        int sum = current.elem();
-        while (current.next().next() != null && current.next() != null && current.next().next().next() != null) {
-            sum += current.next().elem();
+        int sum = 0;
+        while (current.next().next() != null && current.next() != null) {
+            sum += current.elem();
             current = current.next().next();
         }
         return sum; // change as needed
@@ -174,18 +174,37 @@ public class LinkedList {
     public void removeNodes(int startIndex, int endIndex) {
         // FILL IN CODE
         Node current = head;
-        for (int i = 0; i < endIndex; i++) {
-            if (i >= startIndex && i < endIndex) {
+        int i = 0;
 
-                remove(current);
-                current = current.next();
 
-            } else {
+        if (startIndex > 0) {
+            while (current != null) {
+
+                while (i != 0 && i >= startIndex - 1 && i < endIndex) {
+
+
+                    remove(current);
+
+                    i++;
+                }
                 current = current.next();
+                i++;
+
             }
         }
-
+        if (startIndex <= 0) {
+            i = 0;
+            while (current != null) {
+                current = current.next();
+                i++;
+                if (i == endIndex + 1) {
+                    head = current;
+                    head.setNext(current.next());
+                }
+            }
+        }
     }
+
 
     /**
      * Reverse the linked list.
@@ -197,6 +216,17 @@ public class LinkedList {
      */
     public void reverse() {
         // FILL IN CODE
+        Node current = head;
+        Node temp;
+        while (current.next() != null) {
+            temp = head;
+            insertAtFront(tail.elem());
+            if (current.next() == tail) {
+                remove(current);
+            }
+            tail = temp;
+            current = current.next();
+        }
 
 
     }
@@ -229,8 +259,7 @@ public class LinkedList {
         if (tail.elem() == elem) {
             tail = penult;
             tail.setNext(null);
-        }
-        else if (dupIndex == 0) {
+        } else if (dupIndex == 0) {
             head = head.next();
         } else {
             current = head;
