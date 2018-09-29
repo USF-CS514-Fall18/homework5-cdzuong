@@ -45,6 +45,8 @@ public class LinkedListTester {
         int elem3 = list.getElement(5);
         int elem4 = list.getElement(10);
 
+        System.out.println(elem1 + " " + elem2 + " " + elem3 + " " + elem4);
+
         assertTrue("getElement(0) did not return the element at the head, 17.", elem1 == 17);
         assertTrue("getElement(3) did not return 45.", elem2 == 45);
         assertTrue("getElement(5) did not return the element at the tail, 10.", elem3 == 25);
@@ -56,9 +58,11 @@ public class LinkedListTester {
     @Test
     public void testSumElementsAtEvenIndices() {
         int studentRes = list.sumElementsAtEvenIndices();
+        System.out.println(studentRes);
         assertTrue("sumElementsAtEvenIndices does not return the expected result.", studentRes == 20);
         list.append(90);
         studentRes = list.sumElementsAtEvenIndices();
+        System.out.println(studentRes);
         assertTrue("sumElementsAtEvenIndices does not return the expected result.", studentRes == 110);
     }
 
@@ -84,6 +88,7 @@ public class LinkedListTester {
         String studentRes = list.toString().trim();
         System.out.println(studentRes);
         String expectedRes = "17 30 2 45 1 25 30 6 28 99";
+        System.out.println(expectedRes);
         assertTrue("removeLastOccurrence does not remove correctly. ", studentRes.equals(expectedRes));
     }
 
@@ -97,8 +102,10 @@ public class LinkedListTester {
         list.append(99);
         list.removeLastOccurrence(17);
         String studentRes = list.toString().trim();
+        System.out.println(studentRes);
         //System.out.println(studentRes);
         String expectedRes = "30 2 45 1 25 30 6 30 28 99";
+        System.out.println(expectedRes);
         assertTrue("removeLastOccurrence does not remove correctly. ", studentRes.equals(expectedRes));
     }
 
@@ -112,8 +119,9 @@ public class LinkedListTester {
         list.append(99);
         list.removeLastOccurrence(99);
         String studentRes = list.toString().trim();
-        //System.out.println(studentRes);
+        System.out.println(studentRes);
         String expectedRes = "17 30 2 45 1 25 30 6 30 28";
+        System.out.println(expectedRes);
         assertTrue("removeLastOccurrence does not remove correctly. ", studentRes.equals(expectedRes));
         //System.out.println(list.tail().elem());
         assertTrue("removeLastOccurrence does not update tail correctly when the last occurrence of the element is at the tail", list.tail().elem() == 28);
@@ -131,6 +139,7 @@ public class LinkedListTester {
         String studentRes = list.toString().trim();
         System.out.println(studentRes);
         String expectedRes = "8 2 3 4";
+        System.out.println(expectedRes);
         assertTrue("addNumber does not add a value correctly", studentRes.equals(expectedRes));
     }
 
@@ -144,8 +153,10 @@ public class LinkedListTester {
         list.append(1);
         list.addNumber(7);
         String studentRes = list.toString().trim();
+
         System.out.println(studentRes);
         String expectedRes = "0 0 9 1";
+        System.out.println(expectedRes);
         assertTrue("addNumber does not add a value correctly", studentRes.equals(expectedRes));
     }
 
@@ -161,6 +172,7 @@ public class LinkedListTester {
         String studentRes = list.toString().trim();
         System.out.println(studentRes);
         String expectedRes = "0 0 0 0 1";
+        System.out.println(expectedRes);
         assertTrue("addNumber does not add a value correctly", studentRes.equals(expectedRes));
     }
 
@@ -188,8 +200,10 @@ public class LinkedListTester {
     public void testRemoveNodesWrongStartIndex() {
         list.removeNodes(-2, 2);
         String studentRes =  list.toString().trim();
+        System.out.println(studentRes);
         //System.out.println("res = "  + studentRes);
         String expectedRes = "45 1 25";
+        System.out.println(expectedRes);
         assertTrue("The result of removeNodes is not what is expected ", studentRes.equals(expectedRes));
     }
 
@@ -198,8 +212,10 @@ public class LinkedListTester {
     public void testRemoveNodesWrongEndIndex() {
         list.removeNodes(3, 10);
         String studentRes =  list.toString().trim();
+        System.out.println(studentRes);
         //System.out.println("res = "  + studentRes);
         String expectedRes = "17 30 2";
+        System.out.println(expectedRes);
         assertTrue("The result of removeNodes is not what is expected ", studentRes.equals(expectedRes));
     }
 
